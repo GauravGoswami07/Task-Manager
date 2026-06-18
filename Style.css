@@ -1,0 +1,162 @@
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --card-bg: #fff;
+    --border-color: #ccc;
+    --primary: #0056b3;
+}
+
+body[data-theme="dark"] {
+    --bg-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --card-bg: #16213e;
+    --border-color: #444;
+    --primary: #0f3460;
+}
+
+body {
+    font-family: Reckless, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#themeBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    letter-spacing: 0.01em;
+}
+
+#themeBtn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.65);
+    opacity: 1;
+}
+
+#themeBtn:active {
+    transform: scale(0.97);
+}
+
+#themeBtn .btn-icon {
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+body[data-theme="dark"] #themeBtn .btn-icon {
+    transform: rotate(20deg);
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+.controls-section {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.task-form-container, .search-stats-container {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    flex: 1;
+    min-width: 300px;
+}
+
+input, select, button {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+button {
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+    border: none;
+}
+
+button:hover { opacity: 0.9; }
+
+.task-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.task-card[data-status="completed"] {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.box {
+    padding: 2rem;
+    border: 2px solid var(--border-color);
+    text-align: center;
+    border-radius: 8px;
+}
+
+.gp-box { background: rgba(255, 0, 0, 0.1); }
+.p-box { background: rgba(0, 255, 0, 0.1); }
+.c-box { background: rgba(0, 0, 255, 0.1); cursor: pointer; }
+
+.pipeline-flow {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.node {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin: 0.5rem auto;
+    width: fit-content;
+}
+
+.arrow { font-size: 1.5rem; font-weight: bold; }
+.pipeline-merge { text-align: center; margin-top: 1rem; }
